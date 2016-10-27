@@ -72,7 +72,7 @@ class UserStocksController < ApplicationController
     @user_stock = current_user.user_stocks.where(stock_id: params[:id]).first
     @user_stock.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: "#{@user_stock.stock.ticker} was successfully removed from portfolio." }
+      format.html { redirect_to my_portfolio_path, notice: "#{@user_stock.stock.ticker} was successfully removed from portfolio." }
       format.json { head :no_content }
     end
   end
