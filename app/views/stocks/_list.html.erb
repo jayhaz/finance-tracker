@@ -17,7 +17,7 @@
 			<td><%=us.price%></td>
 			<% if @user.id == current_user.id%>
 			<td>
-				<%= link_to 'Delete', user_stock_path(us), :method => :destroy,
+				<%= link_to 'Delete', user_stock_path(us), :method => :delete,
 					 									   :data => {:confirm => "You sure you want to delete #{us.name} from your portfolio?"},
 														   :class => "btn btn-xs btn-danger"%>
             </td>
