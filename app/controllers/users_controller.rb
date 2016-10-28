@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       @users = current_user.except_current_user(@users)
       render partial: 'friends/lookup'
     else
-      render status: not_found, nothing: true
+      render status: :not_found, nothing: true
   end
  end
   
