@@ -81,7 +81,7 @@ class UserStocksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
   def set_user_stock
-     @user_stock = UserStock.find_by(params[:id])
+     @user_stock = UserStock.find(params[:id])
    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
