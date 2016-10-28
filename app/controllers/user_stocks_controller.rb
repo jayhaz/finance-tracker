@@ -69,7 +69,8 @@ class UserStocksController < ApplicationController
   # DELETE /user_stocks/1
   # DELETE /user_stocks/1.json
   def destroy
-    @user_stock = current_user.user_stocks.where(stock_id == params[:id]).first
+    @user_stock = current_user.user_stocks.find_by stock_id: params[:id]
+    #@user_stock = current_user.user_stocks.where(stock_id: params[:id]).first
     @user_stock.destroy
     respond_to do |format|
       format.html { redirect_to my_portfolio_path, notice: "#{@user_stock.stock.ticker} was removed from portfolio." }
